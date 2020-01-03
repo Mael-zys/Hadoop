@@ -20,3 +20,4 @@ shuffle和reduce合在一起做​
 如果写在一个文件里，那需要加锁
 不然还是分开，shuffle一个词一个文件，然后reduce把所有词整合
                             
+shuffle那一步每个slave开一两个线程就好了，最好master在shuffle之前先把slave要shuffle的词写在一个文件里，让slave做相应的词的shuffle
